@@ -89,11 +89,33 @@ if (!int.TryParse(firstNumberString, out firstNumberInt) )
 }
 //Next push
 //Test
-//var firstNumberInt = int.Parse(firstNumberString!);
+
+if(firstNumberInt >= 100)
+{
+    Console.WriteLine("Number is greater than or equal to 100");
+}
+else
+{
+    Console.WriteLine("Number is less than 100");
+}
+
+if (firstNumberInt <= 10)
+{
+    Console.WriteLine("Number is less than or equal to 10");
+} 
+else if (firstNumberInt > 10 && firstNumberInt <=20)
+{
+    Console.WriteLine("Number is greater than 10 and less than or equal to 20");
+}
+else
+{
+    Console.WriteLine("Number is greater than 20");
+}
+    //var firstNumberInt = int.Parse(firstNumberString!);
 
 
 
-Console.WriteLine("Write second number");
+    Console.WriteLine("Write second number");
 var secondNumberString = Console.ReadLine();
 var secondNumberInt = int.Parse(secondNumberString!);
 
