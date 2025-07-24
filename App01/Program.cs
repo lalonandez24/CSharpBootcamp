@@ -87,8 +87,9 @@ if (!int.TryParse(firstNumberString, out firstNumberInt) )
     Console.WriteLine("Thi is not a number");
     return;
 }
+//Next push
+//Test
 //var firstNumberInt = int.Parse(firstNumberString!);
-
 
 
 
