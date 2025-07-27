@@ -67,15 +67,19 @@ Algorithm
 1.- Clien type a number X
 2.- Client type second number Y
 3.- Program capture this values and save them on the var.
+And choose if wants to sum, substract, multiply or divide   
 4.- Program makes the math
 5.- Program print the results
 */
 Console.WriteLine("Type the first number");
 var firstNumberString = Console.ReadLine();
 
+Console.WriteLine("Write second number");
+var secondNumberString = Console.ReadLine();
+var secondNumberInt = 0;
+
 //IF Activity
-
-
+//VALIDATE
 if (string.IsNullOrEmpty(firstNumberString))
 {
     Console.WriteLine("The value is empty or null");
@@ -84,13 +88,49 @@ if (string.IsNullOrEmpty(firstNumberString))
 int firstNumberInt = 0;
 if (!int.TryParse(firstNumberString, out firstNumberInt) )
 {
-    Console.WriteLine("Thi is not a number");
+    Console.WriteLine("This is not a number");
     return;
 }
-//Next push
-//Test
 
-if(firstNumberInt >= 100)
+if (string.IsNullOrEmpty(secondNumberString))
+{
+    Console.WriteLine("The value is empty or null");
+    return;
+}
+if(!int.TryParse(secondNumberString, out secondNumberInt))
+{
+    Console.WriteLine("This is not a number");
+    return;
+
+}
+
+Console.WriteLine("Select: 1)Sum 2)Subs. 3)Mult 4) Div.");
+
+int operationType = int.TryParse(Console.ReadLine(), out operationType)? operationType: 0;
+
+switch(operationType)
+{
+    case 1:
+        var resultPlus = firstNumberInt + secondNumberInt;
+        Console.WriteLine($"You selected Sum {firstNumberInt} + {secondNumberInt} = {resultPlus}" );
+        break;
+    case 2:
+        var resultSubstraction = firstNumberInt - secondNumberInt;
+        Console.WriteLine($"You selected Substraction {firstNumberInt} - {secondNumberInt} = {resultSubstraction}");
+        break;
+    case 3:
+        var resultMultiplication = firstNumberInt * secondNumberInt;
+        Console.WriteLine($"You selected Multiplication {firstNumberInt} * {secondNumberInt} = {resultMultiplication}");
+        break;
+    case 4:
+        var resultDiv = secondNumberInt != 0 ? (double)firstNumberInt / secondNumberInt : 0;
+        Console.WriteLine($"You selected Division {firstNumberInt} / {secondNumberInt} = {resultDiv}");
+        break;
+    default:
+        Console.WriteLine("Invalid option");
+        return;
+}
+if (firstNumberInt >= 100)
 {
     Console.WriteLine("Number is greater than or equal to 100");
 }
@@ -115,27 +155,7 @@ else
 
 
 
-    Console.WriteLine("Write second number");
-var secondNumberString = Console.ReadLine();
-var secondNumberInt = int.Parse(secondNumberString!);
-
-var resultPlus = firstNumberInt + secondNumberInt;
-Console.WriteLine("The result of + is: " + resultPlus);
-
-var resultMinus = firstNumberInt - secondNumberInt;
-Console.WriteLine("The result of - is: " + resultMinus);
-
-var resutlMult = firstNumberInt * secondNumberInt;
-Console.WriteLine("The result of the * is: " + resutlMult);
-
-var resultDiv = firstNumberInt / secondNumberInt;
-Console.WriteLine("The result of the / is: " + resultDiv);
-
-//ASSIGNED
-resultPlus = firstNumberInt;
-resultPlus += secondNumberInt;
-Console.WriteLine("The result of the + assigned is: "+resultPlus);
-
+    
 
 
 
