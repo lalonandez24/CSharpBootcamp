@@ -185,33 +185,49 @@
 // The program print max 100 numnbers bigger than the number typed by the user until it reaches 100
 //RULE: The number does not haveto be greater or equals to 100
 
-Console.WriteLine("Type a number to print the first 100 numbers bigger than it");
-var numberWhileString = Console.ReadLine();
-if (string.IsNullOrEmpty(numberWhileString))
-{
-    Console.WriteLine("The value is empty or null");
-    return;
+//Console.WriteLine("Type a number to print the first 100 numbers bigger than it");
+//var numberWhileString = Console.ReadLine();
+//if (string.IsNullOrEmpty(numberWhileString))
+//{
+//    Console.WriteLine("The value is empty or null");
+//    return;
 
-}
+//}
 
-int numberWhile = 0;
-if (!int.TryParse(numberWhileString, out numberWhile))
-{
-    Console.WriteLine("This is not a number");
-    return;
-}
+//int numberWhile = 0;
+//if (!int.TryParse(numberWhileString, out numberWhile))
+//{
+//    Console.WriteLine("This is not a number");
+//    return;
+//}
 
-if(numberWhile>= 100)
-{
-    Console.WriteLine("The number must be less than 100");
-    return;
-}
+//if(numberWhile>= 100)
+//{
+//    Console.WriteLine("The number must be less than 100");
+//    return;
+//}
 
-while (numberWhile <= 100)
+//while (numberWhile <= 100)
+//{
+//    Console.WriteLine(numberWhile);
+//    numberWhile++;
+//}
+
+//Do While Loop
+//The user types a number as many times as he wants to sum
+//If the user types 0, the programs stops
+//The program prints the sum of all numbers typed by the user
+Console.WriteLine("Type a number to sum, type 0 to stop");
+int sum = 0;
+int numberToSum = 0;
+do
 {
-    Console.WriteLine(numberWhile);
-    numberWhile++;
+    numberToSum = int.Parse(Console.ReadLine()!);
+    sum += numberToSum;
 }
+while (numberToSum!=0);
+
+Console.WriteLine($"The sum of all numbers typed is: {sum}");
 
 
 
