@@ -151,8 +151,6 @@ else
 {
     Console.WriteLine("Number is greater than 20");
 }
-    //var firstNumberInt = int.Parse(firstNumberString!);
-
 
 
     
