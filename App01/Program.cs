@@ -217,12 +217,23 @@
 //The user types a number as many times as he wants to sum
 //If the user types 0, the programs stops
 //The program prints the sum of all numbers typed by the user
-Console.WriteLine("Type a number to sum, type 0 to stop");
+//EXCEPTIONS 
+
+
 int sum = 0;
 int numberToSum = 0;
 do
 {
-    numberToSum = int.Parse(Console.ReadLine()!);
+    Console.WriteLine("Type a number to sum, type 0 to stop");
+    try
+    {
+        numberToSum = int.Parse(Console.ReadLine()!);
+    }
+    catch (System.FormatException e)
+    {
+        Console.WriteLine($"This is not a valid number, please try again:" +$" {e}");
+        continue; // Skip to the next iteration of the loop
+    }
     sum += numberToSum;
 }
 while (numberToSum!=0);
