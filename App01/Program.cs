@@ -231,7 +231,11 @@ do
     }
     catch (System.FormatException e)
     {
-        Console.WriteLine($"This is not a valid number, please try again:" +$" {e}");
+        Console.WriteLine($"This is not a valid number, please try again:" +$" {e.Message}");
+        if (e.Message is null)
+        {
+            throw;
+        }
         continue; // Skip to the next iteration of the loop
     }
     sum += numberToSum;
