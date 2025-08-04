@@ -248,24 +248,34 @@
 
 
 //The user types a number and the metodh print random numbers until it reaches the number typed by the user
+//Methods can have default parameters and aswell assign parameters by name
+//void PrintRandomNumbersUntil(int number, string message="deffault par.")
+//{
+//    var numberString = number;
 
-void PrintRandomNumbersUntil()
+//    var random = new Random();
+//    for (int i = 0; i <= numberString; i++)
+//    {
+//        Console.WriteLine($"The param. is: {message}" +random.Next(1, 101)); // Generate a random number between 1 and 100
+
+//    }
+//}
+
+//PrintRandomNumbersUntil(message:"BIG NUMBER", number:5);
+
+// Objectiv: Calculate the salary of a worker
+//1.- The method recieves the following parameters: salary, taxes, health insurance
+//2.- The method calculates the total to receive the worker
+//3.- The method returns the total to receive the worker
+
+int CalculateSalary(int salary, int taxesPercentaje, int health)
 {
-
-    Console.WriteLine("Type a number between 1 and 100 to print random numbers until it reaches:");
-    var numberString = int.Parse(Console.ReadLine()!);
-
-    var random = new Random();
-    for (int i = 0; i <= numberString; i++)
-    {
-        Console.WriteLine("The numer is: "+random.Next(1, 101)); // Generate a random number between 1 and 100
-
-    }
+    int totalToReceive = salary - taxesPercentaje - health;
+    return totalToReceive;
 }
+int totalSalary = 0;
+totalSalary=CalculateSalary(1000, 200, 100);
 
-PrintRandomNumbersUntil();
-
-
-
+Console.WriteLine($"The total salary is:{totalSalary}");
 
 
