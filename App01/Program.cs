@@ -220,30 +220,50 @@
 //EXCEPTIONS 
 
 
-int sum = 0;
-int numberToSum = 0;
-do
+//int sum = 0;
+//int numberToSum = 0;
+
+
+//do
+//{
+//    Console.WriteLine("Type a number to sum, type 0 to stop");
+//    try
+//    {
+//        numberToSum = int.Parse(Console.ReadLine()!);
+//    }
+//    catch (System.FormatException e)
+//    {
+//        Console.WriteLine($"This is not a valid number, please try again:" +$" {e.Message}");
+//        if (e.Message is null)
+//        {
+//            throw;
+//        }
+//        continue; // Skip to the next iteration of the loop
+//    }
+//    sum += numberToSum;
+//}
+//while (numberToSum!=0);
+
+//Console.WriteLine($"The sum of all numbers typed is: {sum}");
+
+
+//The user types a number and the metodh print random numbers until it reaches the number typed by the user
+
+void PrintRandomNumbersUntil()
 {
-    Console.WriteLine("Type a number to sum, type 0 to stop");
-    try
+
+    Console.WriteLine("Type a number between 1 and 100 to print random numbers until it reaches:");
+    var numberString = int.Parse(Console.ReadLine()!);
+
+    var random = new Random();
+    for (int i = 0; i <= numberString; i++)
     {
-        numberToSum = int.Parse(Console.ReadLine()!);
+        Console.WriteLine("The numer is: "+random.Next(1, 101)); // Generate a random number between 1 and 100
+
     }
-    catch (System.FormatException e)
-    {
-        Console.WriteLine($"This is not a valid number, please try again:" +$" {e.Message}");
-        if (e.Message is null)
-        {
-            throw;
-        }
-        continue; // Skip to the next iteration of the loop
-    }
-    sum += numberToSum;
 }
-while (numberToSum!=0);
 
-Console.WriteLine($"The sum of all numbers typed is: {sum}");
-
+PrintRandomNumbersUntil();
 
 
 
