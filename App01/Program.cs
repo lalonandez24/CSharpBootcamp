@@ -268,14 +268,17 @@
 //2.- The method calculates the total to receive the worker
 //3.- The method returns the total to receive the worker
 
-int CalculateSalary(int salary, int taxesPercentaje, int health)
-{
-    int totalToReceive = salary - taxesPercentaje - health;
-    return totalToReceive;
-}
-int totalSalary = 0;
-totalSalary=CalculateSalary(1000, 200, 100);
+//int CalculateSalary(int salary, int taxesPercentaje, int health)
+//{
+//    int totalToReceive = salary - taxesPercentaje - health;
+//    return totalToReceive;
+//}
+//int totalSalary = 0;
+//totalSalary=CalculateSalary(1000, 200, 100);
 
-Console.WriteLine($"The total salary is:{totalSalary}");
+//Console.WriteLine($"The total salary is:{totalSalary}");
 
-
+//Tuples
+(int a, string b, bool c) myTuple = (1, "Hello", true);
+string myTupleB = myTuple.b;
+Console.WriteLine($"Tuple values: {myTuple.a}, {myTupleB}, {myTuple.c}");
