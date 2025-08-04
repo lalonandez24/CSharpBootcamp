@@ -279,6 +279,32 @@
 //Console.WriteLine($"The total salary is:{totalSalary}");
 
 //Tuples
-(int a, string b, bool c) myTuple = (1, "Hello", true);
-string myTupleB = myTuple.b;
-Console.WriteLine($"Tuple values: {myTuple.a}, {myTupleB}, {myTuple.c}");
+//(int a, string b, bool c) myTuple = (1, "Hello", true);
+//string myTupleB = myTuple.b;
+//Console.WriteLine($"Tuple values: {myTuple.a}, {myTupleB}, {myTuple.c}");
+
+//Objective: Register a new product on the system
+//1.- The method recieves the following parameters: name, price, quantity
+//2.- The program will capture the parameters and put a price that includes taxes
+//3.- The method will register the product and return a tuple with the name, price and quantity
+//4.- The program will print the tuple values
+
+Console.WriteLine("Register a new product on the system");
+Console.WriteLine("Product Name:");
+var productName = Console.ReadLine();
+
+Console.WriteLine("Product Price:");
+var productPrice = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Product Quantity:");
+var productQuantity = int.Parse(Console.ReadLine());
+
+(double, int, string) RegisterProduct(string name, int price, int quantity)
+{
+    var finalPrice = price + (price * 0.16); // Assuming a 16% tax
+   return (price, quantity, name);
+}
+
+var tuple = RegisterProduct(productName!, productPrice, productQuantity);
+
+Console.WriteLine($"Product Registered: Name: {tuple.Item3}, Price: {tuple.Item1}, Quantity: {tuple.Item2}");
