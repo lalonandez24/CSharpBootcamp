@@ -1,11 +1,9 @@
-﻿///*
-// * Many lines comments
+﻿// * Many lines comments
 // */
 
 //// One line comment
 
 ////Data
-///*
 // * VALUE TYPE
 // * Built in Type:
 // * int short long char float double bool byte decimal
@@ -59,7 +57,6 @@
 
 
 
-///*
 //Algorithm 
 
 //1.- Clien type a number X
@@ -289,22 +286,45 @@
 //3.- The method will register the product and return a tuple with the name, price and quantity
 //4.- The program will print the tuple values
 
-Console.WriteLine("Register a new product on the system");
-Console.WriteLine("Product Name:");
-var productName = Console.ReadLine();
+//Console.WriteLine("Register a new product on the system");
+//Console.WriteLine("Product Name:");
+//var productName = Console.ReadLine();
 
-Console.WriteLine("Product Price:");
-var productPrice = int.Parse(Console.ReadLine());
+//Console.WriteLine("Product Price:");
+//var productPrice = int.Parse(Console.ReadLine());
 
-Console.WriteLine("Product Quantity:");
-var productQuantity = int.Parse(Console.ReadLine());
+//Console.WriteLine("Product Quantity:");
+//var productQuantity = int.Parse(Console.ReadLine());
 
-(double, int, string) RegisterProduct(string name, int price, int quantity)
-{
-    var finalPrice = price + (price * 0.16); // Assuming a 16% tax
-   return (price, quantity, name);
-}
+//(double, int, string) RegisterProduct(string name, int price, int quantity)
+//{
+//    var finalPrice = price + (price * 0.16); // Assuming a 16% tax
+//   return (price, quantity, name);
+//}
 
-var tuple = RegisterProduct(productName!, productPrice, productQuantity);
+//var tuple = RegisterProduct(productName!, productPrice, productQuantity);
 
-Console.WriteLine($"Product Registered: Name: {tuple.Item3}, Price: {tuple.Item1}, Quantity: {tuple.Item2}");
+//Console.WriteLine($"Product Registered: Name: {tuple.Item3}, Price: {tuple.Item1}, Quantity: {tuple.Item2}");
+
+using App01;
+
+//Accessor Modifiers
+///*
+/* * Accessor Modifiers
+ * 
+ * public: Accessible from anywhere
+ * private: Accessible only within the class
+ * protected: Accessible within the class and derived classes
+ * internal: Accessible within the same assembly
+ * protected internal: Accessible within the same assembly and derived classes
+ * 
+ * 
+ * */
+///*
+Book book = new Book("C# Programming", "John Doe", 300);
+var res1 = book.getDescription();
+Console.WriteLine(res1);
+
+book.setName("Java FullStack");
+var res2 = book.getName();
+Console.WriteLine(res2);
