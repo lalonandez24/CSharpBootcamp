@@ -9,9 +9,26 @@ namespace App01
     public class Book
     {
 
-        string name;
-        public string author;
-        public int pages;  
+        private string name;
+        //property
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        //property
+        private string author;
+        public string Author
+        {
+            get => author;
+            set => author = value;
+        }
+        //property
+        private int pages;  
+        public int Pages
+        { get; set;
+        }
+        //Constructor
         public Book(string name, string author, int pages)
         {
             this.name = name;
@@ -24,14 +41,6 @@ namespace App01
             return $"{name} by {author}, {pages} pages";
         }
 
-        public string getName()
-        {
-            return name;
-        }   
 
-        public void setName(string name)
-        {
-            this.name = name;
-        }
     }
 }

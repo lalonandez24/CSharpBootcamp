@@ -325,6 +325,6 @@ Book book = new Book("C# Programming", "John Doe", 300);
 var res1 = book.getDescription();
 Console.WriteLine(res1);
 
-book.setName("Java FullStack");
-var res2 = book.getName();
+book.Name="Java FullStack";
+var res2 = book.Name;
 Console.WriteLine(res2);
